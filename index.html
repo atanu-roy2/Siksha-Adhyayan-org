@@ -291,6 +291,236 @@
             transform: scale(1.2);
         }      
 
+         @media (max-width: 640px) {
+            #home h1 {
+                font-size: 2rem !important;
+                line-height: 1.2;
+            }
+            
+            #home p {
+                font-size: 1.125rem !important;
+            }
+            
+            .sparkle {
+                font-size: 3rem !important;
+            }
+        }
+        
+        /* Tablet adjustments */
+        @media (min-width: 641px) and (max-width: 768px) {
+            #home h1 {
+                font-size: 3rem !important;
+            }
+            
+            #home p {
+                font-size: 1.5rem !important;
+            }
+        }
+        
+        /* Gallery Section - Responsive Grid */
+        @media (max-width: 640px) {
+            #gallery .grid {
+                grid-template-columns: 1fr !important;
+                gap: 1.5rem !important;
+            }
+            
+            .gallery-item > div {
+                height: 16rem !important;
+            }
+        }
+        
+        @media (min-width: 641px) and (max-width: 1024px) {
+            #gallery .grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+            }
+        }
+        
+        /* About Section - Image Slider */
+        @media (max-width: 768px) {
+            #about .grid {
+                grid-template-columns: 1fr !important;
+            }
+            
+            #imageSlider {
+                height: 400px !important;
+                margin-top: 2rem;
+            }
+        }
+        
+        /* Teachers Section */
+        @media (max-width: 640px) {
+            #teachers .grid {
+                grid-template-columns: 1fr !important;
+                gap: 2rem !important;
+            }
+            
+            .teacher-card {
+                padding: 1.5rem !important;
+            }
+            
+            .teacher-card h3 {
+                font-size: 1.5rem !important;
+            }
+        }
+        
+        @media (min-width: 641px) and (max-width: 1024px) {
+            #teachers .grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+            }
+        }
+        
+        /* Batches Section */
+        @media (max-width: 640px) {
+            #batches .grid {
+                grid-template-columns: 1fr !important;
+                gap: 2rem !important;
+            }
+            
+            .feature-card {
+                padding: 2rem !important;
+            }
+            
+            #batches .transform.scale-105 {
+                transform: scale(1) !important;
+            }
+        }
+        
+        @media (min-width: 641px) and (max-width: 1024px) {
+            #batches .grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+            }
+        }
+        
+        /* How to Apply Section */
+        @media (max-width: 768px) {
+            #batches .grid.md\\:grid-cols-5 {
+                grid-template-columns: 1fr !important;
+                gap: 1rem !important;
+            }
+        }
+        
+        @media (min-width: 769px) and (max-width: 1024px) {
+            #batches .grid.md\\:grid-cols-5 {
+                grid-template-columns: repeat(2, 1fr) !important;
+            }
+        }
+        
+        /* Contact Section */
+        @media (max-width: 768px) {
+            #contact .grid {
+                grid-template-columns: 1fr !important;
+                gap: 2rem !important;
+            }
+        }
+        
+        /* Stats Section */
+        @media (max-width: 640px) {
+            .stat-number {
+                font-size: 2.5rem !important;
+            }
+        }
+        
+        @media (min-width: 641px) and (max-width: 1024px) {
+            .grid.md\\:grid-cols-4 {
+                grid-template-columns: repeat(2, 1fr) !important;
+            }
+        }
+        
+        /* Features Section */
+        @media (max-width: 640px) {
+            .grid.md\\:grid-cols-3 {
+                grid-template-columns: 1fr !important;
+            }
+        }
+        
+        @media (min-width: 641px) and (max-width: 1024px) {
+            .grid.md\\:grid-cols-3 {
+                grid-template-columns: repeat(2, 1fr) !important;
+            }
+        }
+        
+        /* Headings Responsive */
+        @media (max-width: 640px) {
+            h2.text-5xl {
+                font-size: 2rem !important;
+            }
+            
+            h3.text-3xl {
+                font-size: 1.5rem !important;
+            }
+            
+            h3.text-4xl {
+                font-size: 1.75rem !important;
+            }
+        }
+        
+        /* Padding adjustments for mobile */
+        @media (max-width: 640px) {
+            section {
+                padding-top: 3rem !important;
+                padding-bottom: 3rem !important;
+            }
+            
+            .py-20 {
+                padding-top: 3rem !important;
+                padding-bottom: 3rem !important;
+            }
+        }
+        
+        /* Button responsive */
+        @media (max-width: 640px) {
+            .btn-hover {
+                padding: 0.75rem 1.5rem !important;
+                font-size: 1rem !important;
+            }
+        }
+        
+        /* Video elements responsive */
+        @media (max-width: 640px) {
+            video {
+                width: 100%;
+                height: auto;
+                max-height: 200px;
+                object-fit: cover;
+            }
+        }
+        
+        /* Image slider controls */
+        @media (max-width: 640px) {
+            #sliderControls {
+                padding: 0.5rem 1rem !important;
+                gap: 0.5rem !important;
+            }
+            
+            .slider-button {
+                width: 8px !important;
+                height: 8px !important;
+            }
+        }
+        
+        /* Teacher avatar responsive */
+        @media (max-width: 640px) {
+            .teacher-avatar {
+                width: 120px !important;
+                height: 120px !important;
+            }
+        }
+        
+        /* Text size adjustments */
+        @media (max-width: 640px) {
+            .text-lg {
+                font-size: 0.95rem !important;
+            }
+            
+            .text-xl {
+                font-size: 1.1rem !important;
+            }
+            
+            .text-2xl {
+                font-size: 1.25rem !important;
+            }
+        }
+
     </style>
 </head>
 <body class="bg-white dark:bg-gray-900 transition-colors duration-300">
