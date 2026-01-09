@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siksha Adhyayan Institute - Inspiring Minds, Empowering Futures</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(60px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInLeft {
+            from { opacity: 0; transform: translateX(-60px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        @keyframes fadeInRight {
+            from { opacity: 0; transform: translateX(60px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-30px) rotate(3deg); }
+        }
+        @keyframes floatReverse {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(30px) rotate(-3deg); }
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        @keyframes slideIn {
+            from { transform: translateX(-100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        @keyframes glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(0,0,0,0.1); }
+            50% { box-shadow: 0 0 40px rgba(0,0,0,0.2); }
+        }
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        @keyframes sparkle {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.2); }
+        }
+        
+        .fade-in-up { animation: fadeInUp 0.8s ease-out forwards; opacity: 0; }
+        .fade-in-left { animation: fadeInLeft 0.8s ease-out forwards; opacity: 0; }
+        .fade-in-right { animation: fadeInRight 0.8s ease-out forwards; opacity: 0; }
+        .float-img { animation: float 6s ease-in-out infinite; }
+        .float-img-reverse { animation: floatReverse 7s ease-in-out infinite; }
+        .pulse-animate { animation: pulse 2s ease-in-out infinite; }
+        .glow-effect { animation: glow 3s ease-in-out infinite; }
+        
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+        .delay-400 { animation-delay: 0.4s; }
+        
+        .gradient-bg {
+            background: linear-gradient(-45deg, #037a66, #2c3267, #31036a, #2d2d2d);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+        }
+        
+        .dark .gradient-bg {
+            background: linear-gradient(-45deg, #675807, #89e666, #330cf4, #0d5866);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+        }
+        
+        .gallery-item {
+            transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .gallery-item::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+            transform: rotate(45deg);
+            transition: all 0.5s;
+        }
+        
+        .gallery-item:hover::before {
+            animation: shimmer 1.5s infinite;
+        }
+        
+        @keyframes shimmer {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.15) translateY(-20px) rotate(5deg);
+            z-index: 10;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        
+        .dark .gallery-item:hover {
+            box-shadow: 0 20px 60px rgba(255,255,255,0.2);
+        }
+        
+        .feature-card {
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .feature-card::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(0,0,0,0.05);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+        
+        .dark .feature-card::after {
+            background: rgba(255,255,255,0.05);
+        }
+        
+        .feature-card:hover::after {
+            width: 500px;
+            height: 500px;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-15px) scale(1.03);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+        }
+        
+        .dark .feature-card:hover {
+            box-shadow: 0 25px 50px rgba(255,255,255,0.1);
+        }
+        
+        .sparkle {
+            animation: sparkle 2s ease-in-out infinite;
+        }
+        
+        .btn-hover {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+        
+        .btn-hover::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s;
+        }
+        
+        .btn-hover:hover::before {
+            left: 100%;
+        }
+        
+        .btn-hover:hover {
+            transform: scale(1.1) translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        
+        .dark .btn-hover:hover {
+            box-shadow: 0 10px 30px rgba(255,255,255,0.2);
+        }
+        
+        html { scroll-behavior: smooth; }
+        .dark { color-scheme: dark; }
+        
+        .stat-number {
+            transition: transform 0.3s ease;
+            display: inline-block;
+        }
+        
+        .stat-number:hover {
+            transform: scale(1.2) rotate(5deg);
+        }
+        
+        .teacher-card {
+            transition: all 0.5s ease;
+            position: relative;
+        }
+        
+        .teacher-card:hover {
+            transform: translateY(-20px) scale(1.05);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.2);
+        }
+        
+        .dark .teacher-card:hover {
+            box-shadow: 0 30px 60px rgba(255,255,255,0.15);
+        }
+        
+        .teacher-avatar {
+            transition: all 0.5s ease;
+        }
+        
+        .teacher-card:hover .teacher-avatar {
+            transform: scale(1.1) rotate(360deg);
+        }
+        
+        .social-link {
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .social-link:hover {
+            transform: translateX(10px) scale(1.05);
+        }
+        
+        .parallax {
+            transform: translateZ(0);
+            will-change: transform;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .bounce-on-hover:hover {
+            animation: bounce 0.6s ease infinite;
+        }
+          .bounce-on-hover {
+            transition: transform 0.3s ease;
+        }
+        .bounce-on-hover:hover {
+            transform: translateY(-10px);
+        }
+        .scroll-animate {
+            opacity: 1;
+        }
+        .fade-in-left {
+            animation: fadeInLeft 0.8s ease-out;
+        }
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        .slider-image {
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .slider-image.active {
+            opacity: 1;
+            position: relative;
+        }
+        .slider-button {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            border: 2px solid white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .slider-button:hover {
+            transform: scale(1.3);
+            background: rgba(255, 255, 255, 0.8);
+        }
+        .slider-button.active {
+            background: white;
+            transform: scale(1.2);
+        }      
+
+    </style>
+</head>
+<body class="bg-white dark:bg-gray-900 transition-colors duration-300">
+    <!-- Navigation -->
+    <nav class="bg-white dark:bg-gray-800 shadow-2xl fixed w-full top-0 z-50 transition-all duration-300 backdrop-blur-lg bg-opacity-95">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <span class="text-2xl font-bold text-black dark:text-white  flex gap-10 "><img src="logo.png" class="text-2xl h-10 w-10"> Siksha Adhyayan</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition transform hover:scale-110">Home</a>
+                    <a href="#about" class="text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition transform hover:scale-110">About</a>
+                    <a href="#gallery" class="text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition transform hover:scale-110">Gallery</a>
+                    <a href="#teachers" class="text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition transform hover:scale-110">Teachers</a>
+                    <a href="#batches" class="text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition transform hover:scale-110">Batches</a>
+                    <a href="#contact" class="text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition transform hover:scale-110">Contact</a>
+                    <button id="themeToggle" class="p-2 rounded-lg bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition transform hover:scale-110 hover:rotate-180 duration-500">
+                        <span class="dark:hidden text-2xl">🌙</span>
+                        <span class="hidden dark:inline text-2xl">☀️</span>
+                    </button>
+                </div>
+                <div class="md:hidden flex items-center space-x-2">
+                    <button id="themeToggleMobile" class="p-2 rounded-lg bg-gray-100 dark:bg-gray-700 hover:scale-110 transition">
+                        <span class="dark:hidden text-2xl">🌙</span>
+                        <span class="hidden dark:inline text-2xl">☀️</span>
+                    </button>
+                    <button id="menuBtn" class="text-gray-700 dark:text-gray-300">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobileMenu" class="hidden md:hidden bg-white dark:bg-gray-800 border-t dark:border-gray-700">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#home" class="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded">Home</a>
+                <a href="#about" class="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded">About</a>
+                <a href="#gallery" class="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded">Gallery</a>
+                <a href="#teachers" class="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded">Teachers</a>
+                <a href="#batches" class="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded">Batches</a>
+                <a href="#contact" class="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="gradient-bg pt-24 pb-20 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-20 left-10 text-8xl sparkle">📚</div>
+            <div class="absolute top-40 right-20 text-6xl sparkle delay-200">🎓</div>
+            <div class="absolute bottom-20 left-1/4 text-7xl sparkle delay-300">✨</div>
+            <div class="absolute top-1/3 right-1/4 text-5xl sparkle delay-100">💡</div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
+            <div class="text-center">
+                <h1 class="text-5xl md:text-7xl font-bold mb-6 text-black dark:text-white fade-in-up pulse-animate">
+                    Inspiring Minds, Empowering Futures 🌟
+                </h1>
+                <p class="text-xl md:text-3xl mb-8 text-white dark:text-black fade-in-up delay-100 font-semibold">
+                    Quality Education for Classes VI to XII - 100% Free(Online)
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center fade-in-up delay-200">
+                    <a href="#batches" class="btn-hover bg-white dark:bg-black text-black dark:text-white px-10 py-4 rounded-full font-bold text-lg shadow-2xl">
+                        🚀 Enroll Now
+                    </a>
+                    <a href="#about" class="btn-hover border-4 border-white dark:border-black text-white dark:text-black bg-black dark:bg-white px-10 py-4 rounded-full font-bold text-lg shadow-2xl">
+                        📖 Learn More
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-20 bg-white dark:bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-5xl font-bold text-center mb-4 text-black dark:text-white scroll-animate">
+                🎯 What Makes Us Unique
+            </h2>
+            <p class="text-center text-gray-600 dark:text-gray-400 mb-12 text-xl scroll-animate">Experience education like never before</p>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="feature-card text-center p-8 rounded-2xl border-2 border-gray-200 dark:border-gray-700 glow-effect scroll-animate">
+                    <div class="text-7xl mb-6 bounce-on-hover inline-block">📚</div>
+                    <h3 class="text-2xl font-bold mb-4 text-black dark:text-white">Comprehensive Coverage</h3>
+                    <p class="text-gray-600 dark:text-gray-400 text-lg">Full syllabus for CBSE, ICSE, TBSE & State Boards with NCERT-based structured learning</p>
+                </div>
+                <div class="feature-card text-center p-8 rounded-2xl border-2 border-gray-200 dark:border-gray-700 glow-effect scroll-animate delay-100">
+                    <div class="text-7xl mb-6 bounce-on-hover inline-block">🌐</div>
+                    <h3 class="text-2xl font-bold mb-4 text-black dark:text-white">Bilingual Learning</h3>
+                    <p class="text-gray-600 dark:text-gray-400 text-lg">Dual-language support in English and Banglish for better understanding</p>
+                </div>
+                <div class="feature-card text-center p-8 rounded-2xl border-2 border-gray-200 dark:border-gray-700 glow-effect scroll-animate delay-200">
+                    <div class="text-7xl mb-6 bounce-on-hover inline-block">💯</div>
+                    <h3 class="text-2xl font-bold mb-4 text-black dark:text-white">100% Free onilne Education</h3>
+                    <p class="text-gray-600 dark:text-gray-400 text-lg">No barriers to quality education - accessible to all learners across India</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-20 bg-gradient-to-r from-gray-900 to-black dark:from-gray-100 dark:to-white text-white dark:text-black">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 text-center">
+                <div class="scroll-animate p-6 rounded-xl hover:bg-white hover:bg-opacity-10 dark:hover:bg-black dark:hover:bg-opacity-10 transition">
+                    <div class="text-6xl font-bold mb-2 stat-number">500+</div>
+                    <p class="text-xl">Students Trained</p>
+                </div>
+                <div class="scroll-animate delay-100 p-6 rounded-xl hover:bg-white hover:bg-opacity-10 dark:hover:bg-black dark:hover:bg-opacity-10 transition">
+                    <div class="text-6xl font-bold mb-2 stat-number">92%</div>
+                    <p class="text-xl">Success Rate</p>
+                </div>
+                <div class="scroll-animate delay-200 p-6 rounded-xl hover:bg-white hover:bg-opacity-10 dark:hover:bg-black dark:hover:bg-opacity-10 transition">
+                    <div class="text-6xl font-bold mb-2 stat-number">500+</div>
+                    <p class="text-xl">Live Sessions</p>
+                </div>
+                <div class="scroll-animate delay-300 p-6 rounded-xl hover:bg-white hover:bg-opacity-10 dark:hover:bg-black dark:hover:bg-opacity-10 transition">
+                    <div class="text-6xl font-bold mb-2 stat-number">300+</div>
+                    <p class="text-xl">Offline Workshops</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-20 bg-gray-50 dark:bg-gray-800 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-5xl font-bold text-center mb-4 text-black dark:text-white scroll-animate">🎨 Our Learning Journey</h2>
+            <p class="text-center text-gray-600 dark:text-gray-400 mb-12 text-xl scroll-animate">Moments that inspire excellence</p>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div class="gallery-item scroll-animate">
+                    <div class="bg-gradient-to-br from-blue-400 to-blue-600 dark:from-blue-300 dark:to-blue-500 rounded-2xl overflow-hidden shadow-2xl float-img h-72 flex items-center justify-center border-4 border-white dark:border-gray-700">
+                        <div class="text-center p-6">
+                            <div class="text-8xl mb-3"><video autoplay muted loop><source src="WhatsApp Video 2026-01-01 at 10.31.55.mp4"></video></div>
+                            <p class="text-lg font-bold text-white">Interactive Classes</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item scroll-animate delay-100">
+                    <div class="bg-gradient-to-br from-purple-400 to-purple-600 dark:from-purple-300 dark:to-purple-500 rounded-2xl overflow-hidden shadow-2xl float-img-reverse h-72 flex items-center justify-center border-4 border-white dark:border-gray-700">
+                        <div class="text-center p-6">
+                            <div class="text-8xl mb-3"><video autoplay muted loop><source src="WhatsApp Video 2026-01-01 at 10.32.02 (1).mp4"></video></div>
+                            <p class="text-lg font-bold text-white">Expert Teachers</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item scroll-animate delay-200">
+                    <div class="bg-gradient-to-br from-green-400 to-green-600 dark:from-green-300 dark:to-green-500 rounded-2xl overflow-hidden shadow-2xl float-img h-72 flex items-center justify-center border-4 border-white dark:border-gray-700">
+                        <div class="text-center p-6">
+                            <div class="text-8xl mb-3"><video autoplay muted loop><source src="WhatsApp Video 2026-01-01 at 10.33.44.mp4"></video></div>
+                            <p class="text-lg font-bold text-white">Digital Learning</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item scroll-animate delay-300">
+                    <div class="bg-gradient-to-br from-red-400 to-red-600 dark:from-red-300 dark:to-red-500 rounded-2xl overflow-hidden shadow-2xl float-img-reverse h-72 flex items-center justify-center border-4 border-white dark:border-gray-700">
+                        <div class="text-center p-6">
+                            <div class="text-8xl mb-3"><img src="test.jpg"></div>
+                            <p class="text-lg font-bold text-white">Mock Tests</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item scroll-animate">
+                    <div class="bg-gradient-to-br from-yellow-400 to-yellow-600 dark:from-yellow-300 dark:to-yellow-500 rounded-2xl overflow-hidden shadow-2xl float-img-reverse h-72 flex items-center justify-center border-4 border-white dark:border-gray-700">
+                        <div class="text-center p-6">
+                            <div class="text-8xl mb-3"><img src="success.jpg"></div>
+                            <p class="text-lg font-bold text-white">Success Stories</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item scroll-animate delay-100">
+                    <div class="bg-gradient-to-br from-pink-400 to-pink-600 dark:from-pink-300 dark:to-pink-500 rounded-2xl overflow-hidden shadow-2xl float-img h-72 flex items-center justify-center border-4 border-white dark:border-gray-700">
+                        <div class="text-center p-6">
+                            <div class="text-8xl mb-3"><img src="practice.webp"></div>
+                            <p class="text-lg font-bold text-white">Practice Sessions</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item scroll-animate delay-200">
+                    <div class="bg-gradient-to-br from-indigo-400 to-indigo-600 dark:from-indigo-300 dark:to-indigo-500 rounded-2xl overflow-hidden shadow-2xl float-img-reverse h-72 flex items-center justify-center border-4 border-white dark:border-gray-700">
+                        <div class="text-center p-6">
+                            <div class="text-8xl mb-3">⏩</div>
+                            <p class="text-lg font-bold text-white">Speed Tests</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item scroll-animate delay-300">
+                    <div class="bg-gradient-to-br from-teal-400 to-teal-600 dark:from-teal-300 dark:to-teal-500 rounded-2xl overflow-hidden shadow-2xl float-img h-72 flex items-center justify-center border-4 border-white dark:border-gray-700">
+                        <div class="text-center p-6">
+                            <div class="text-8xl mb-3"><img src="goal.webp"></div>
+                            <p class="text-lg font-bold text-white">Goal Achievement</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section with Image Slider -->
+ <section id="about" class="py-20 bg-white dark:bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="scroll-animate fade-in-left">
+                    <div class="text-6xl mb-6 bounce-on-hover inline-block">🎓</div>
+                    <h2 class="text-5xl font-bold mb-6 text-black dark:text-white">About Siksha Adhyayan Institute</h2>
+                    <p class="text-gray-600 dark:text-gray-400 mb-4 text-lg leading-relaxed">Established on 2nd April 2023, Siksha Adhyayan Institute stands as a symbol of dedication, innovation, and accessibility in education.</p>
+                    <p class="text-gray-600 dark:text-gray-400 mb-4 text-lg leading-relaxed">From digital classrooms to in-person guidance, we bridge the gap between traditional and modern education — ensuring that every learner receives personal attention, conceptual clarity, and the confidence to perform their best.</p>
+                    <div class="mt-8 p-6 bg-gray-50 dark:bg-gray-800 rounded-2xl border-2 border-gray-200 dark:border-gray-700">
+                        <h3 class="text-2xl font-bold mb-3 text-black dark:text-white">🎯 Our Vision</h3>
+                        <p class="text-gray-600 dark:text-gray-400 text-lg">To make quality education accessible to every student, regardless of location or background, through a seamless blend of online and offline learning experiences.</p>
+                    </div>
+                    <div class="mt-8 p-6 bg-gradient-to-br from-gray-900 to-black dark:from-gray-100 dark:to-white rounded-2xl border-2 border-gray-800 dark:border-gray-200">
+                        <h3 class="text-2xl font-bold mb-6 text-white dark:text-black">✨ Our Offerings</h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-start transform hover:translate-x-3 transition">
+                                <span class="text-white dark:text-black mr-3 text-xl">✓</span>
+                                <span class="text-white dark:text-black">Video lessons by experienced teachers</span>
+                            </li>
+                            <li class="flex items-start transform hover:translate-x-3 transition">
+                                <span class="text-white dark:text-black mr-3 text-xl">✓</span>
+                                <span class="text-white dark:text-black">Board-wise study materials and practice sets</span>
+                            </li>
+                            <li class="flex items-start transform hover:translate-x-3 transition">
+                                <span class="text-white dark:text-black mr-3 text-xl">✓</span>
+                                <span class="text-white dark:text-black">Exam-oriented strategies and mock tests</span>
+                            </li>
+                            <li class="flex items-start transform hover:translate-x-3 transition">
+                                <span class="text-white dark:text-black mr-3 text-xl">✓</span>
+                                <span class="text-white dark:text-black">Regular quizzes and revision modules</span>
+                            </li>
+                            <li class="flex items-start transform hover:translate-x-3 transition">
+                                <span class="text-white dark:text-black mr-3 text-xl">✓</span>
+                                <span class="text-white dark:text-black">Smart Classroom with Smart Facilities</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Image Slider -->
+                <div class="relative rounded-2xl overflow-hidden shadow-2xl h-[600px] group" id="imageSlider">
+                    <div class="relative w-full h-full">
+                        <img src="hero-img1.jpg" alt="Students studying" class="slider-image active" data-index="0">
+                        <img src="hero-img2.jpg" alt="Classroom" class="slider-image" data-index="1">
+                        <img src="hero-img3.jpg" alt="Digital learning" class="slider-image" data-index="2">
+                        <img src="hero-img4.jpg" alt="Student success" class="slider-image" data-index="3">
+                        <img src="hero-img2.jpg" alt="Modern education" class="slider-image" data-index="4">
+                    </div>
+                    
+                    <!-- Manual Controls -->
+                    <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex gap-3 bg-black/30 backdrop-blur-md px-6 py-3 rounded-full" id="sliderControls">
+                        <button class="slider-button active" data-slide="0"></button>
+                        <button class="slider-button" data-slide="1"></button>
+                        <button class="slider-button" data-slide="2"></button>
+                        <button class="slider-button" data-slide="3"></button>
+                        <button class="slider-button" data-slide="4"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Teachers Section -->
+  <!-- Teachers Section -->
+    <section id="teachers" class="py-20 bg-gray-50 dark:bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-5xl font-bold text-center mb-4 text-black dark:text-white scroll-animate floating">👨‍🏫 Our Expert Teachers</h2>
+            <p class="text-center text-gray-600 dark:text-gray-400 mb-12 text-xl scroll-animate">Learning from the best minds</p>
+            <div class="grid md:grid-cols-3 gap-10">
+                <!-- Teacher 1: Deep Acharjee -->
+                <div class="teacher-card bg-white dark:bg-gray-900 p-10 rounded-3xl shadow-2xl border-4 border-gray-200 dark:border-gray-700 glow-effect scroll-animate">
+                    <div class="text-center mb-6">
+                        <div class="teacher-avatar-wrapper mb-6">
+                            <div class="avatar-ring"></div>
+                            <img src="Deep.png" 
+                                 alt="Deep Acharjee" 
+                                 class="teacher-avatar">
+                        </div>
+                        <h3 class="text-3xl font-bold text-black dark:text-white teacher-name">Deep Acharjee</h3>
+                        <p class="text-gray-600 dark:text-gray-400 font-semibold text-lg mt-2 qualification-badge">
+                            <span class="inline-block bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-4 py-1 rounded-full">
+                                BSc Physics, CU
+                            </span>
+                        </p>
+                    </div>
+                    <div class="text-gray-600 dark:text-gray-400">
+                        <p class="mb-3 font-bold text-black dark:text-white text-lg">📚 Subjects:</p>
+                        <ul class="space-y-2 text-lg">
+                            <li class="subject-item">• Physics (Class 10, 11, 12)</li>
+                            <li class="subject-item">• Chemistry (Class 10)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Teacher 2: Shantanu Roy -->
+                <div class="teacher-card bg-white dark:bg-gray-900 p-10 rounded-3xl shadow-2xl border-4 border-gray-200 dark:border-gray-700 glow-effect scroll-animate delay-100">
+                    <div class="text-center mb-6">
+                        <div class="teacher-avatar-wrapper mb-6">
+                            <div class="avatar-ring"></div>
+                            <img src="shantanu.png" 
+                                 alt="Shantanu Roy" 
+                                 class="teacher-avatar">
+                        </div>
+                        <h3 class="text-3xl font-bold text-black dark:text-white teacher-name">Shantanu Roy</h3>
+                        <p class="text-gray-600 dark:text-gray-400 font-semibold text-lg mt-2 qualification-badge">
+                            <span class="inline-block bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-4 py-1 rounded-full">
+                                BSc BEd Zoology, AU
+                            </span>
+                        </p>
+                    </div>
+                    <div class="text-gray-600 dark:text-gray-400">
+                        <p class="mb-3 font-bold text-black dark:text-white text-lg">📚 Subjects:</p>
+                        <ul class="space-y-2 text-lg">
+                            <li class="subject-item">• Biology (Class 9, 10, 11, 12)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Teacher 3: Joydip Malakar -->
+                <div class="teacher-card bg-white dark:bg-gray-900 p-10 rounded-3xl shadow-2xl border-4 border-gray-200 dark:border-gray-700 glow-effect scroll-animate delay-200">
+                    <div class="text-center mb-6">
+                        <div class="teacher-avatar-wrapper mb-6">
+                            <div class="avatar-ring"></div>
+                            <img src="joydip.png" 
+                                 alt="Joydip Malakar" 
+                                 class="teacher-avatar">
+                        </div>
+                        <h3 class="text-3xl font-bold text-black dark:text-white teacher-name">Joydip Malakar</h3>
+                        <p class="text-gray-600 dark:text-gray-400 font-semibold text-lg mt-2 qualification-badge">
+                            <span class="inline-block bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-200 px-4 py-1 rounded-full">
+                                MSc Mathematics, SLET
+                            </span>
+                        </p>
+                    </div>
+                    <div class="text-gray-600 dark:text-gray-400">
+                        <p class="mb-3 font-bold text-black dark:text-white text-lg">📚 Subjects:</p>
+                        <ul class="space-y-2 text-lg">
+                            <li class="subject-item">• Mathematics (Class 9, 10, 11, 12)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Batches Section -->
+    <section id="batches" class="py-20 bg-white dark:bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-5xl font-bold text-center mb-4 text-black dark:text-white scroll-animate">🎓 Available Batches</h2>
+            <p class="text-center text-gray-600 dark:text-gray-400 mb-12 text-xl scroll-animate">All courses are completely free of charge!</p>
+            <div class="grid md:grid-cols-3 gap-10">
+                <div class="feature-card bg-gradient-to-br from-blue-50 to-blue-100 dark:from-gray-800 dark:to-gray-900 p-10 rounded-3xl shadow-2xl border-4 border-blue-200 dark:border-blue-900 scroll-animate">
+                    <div class="text-center mb-8">
+                        <div class="text-6xl mb-6 bounce-on-hover inline-block">🌱</div>
+                        <h3 class="text-3xl font-bold text-black dark:text-white mb-3">Foundation Batch</h3>
+                        <p class="text-gray-700 dark:text-gray-300 font-bold text-xl">Classes VI - VIII</p>
+                    </div>
+                    <ul class="space-y-4 text-gray-700 dark:text-gray-300 mb-8">
+                        <li class="flex items-start text-lg">
+                            <span class="text-black dark:text-white mr-3 text-2xl">•</span>
+                            <span>Concept building & NCERT learning</span>
+                        </li>
+                        <li class="flex items-start text-lg">
+                            <span class="text-black dark:text-white mr-3 text-2xl">•</span>
+                            <span>Online + Offline mode</span>
+                        </li>
+                        <li class="flex items-start text-lg">
+                            <span class="text-black dark:text-white mr-3 text-2xl">•</span>
+                            <span>English & Banglish</span>
+                        </li>
+                    </ul>
+                    <div class="text-center">
+                        <p class="text-5xl font-bold text-black dark:text-white mb-4 pulse-animate"></p>
+                    </div>
+                </div>
+                <div class="feature-card bg-gradient-to-br from-purple-50 to-purple-100 dark:from-gray-800 dark:to-gray-900 p-10 rounded-3xl shadow-2xl border-4 border-purple-500 dark:border-purple-700 scroll-animate delay-100 transform scale-105">
+                    <div class="text-center mb-8">
+                        <div class="text-6xl mb-6 bounce-on-hover inline-block">🎯</div>
+                        <h3 class="text-3xl font-bold text-black dark:text-white mb-3">Board Preparatory</h3>
+                        <p class="text-gray-700 dark:text-gray-300 font-bold text-xl">Classes IX - X</p>
+                        <span class="inline-block bg-purple-600 text-white px-4 py-2 rounded-full text-sm font-bold mt-3">POPULAR</span>
+                    </div>
+                    <ul class="space-y-4 text-gray-700 dark:text-gray-300 mb-8">
+                        <li class="flex items-start text-lg">
+                            <span class="text-black dark:text-white mr-3 text-2xl">•</span>
+                            <span>Complete syllabus coverage</span>
+                        </li>
+                        <li class="flex items-start text-lg">
+                            <span class="text-black dark:text-white mr-3 text-2xl">•</span>
+                            <span>Test series & doubt clearing</span>
+                        </li>
+                        <li class="flex items-start text-lg">
+                            <span class="text-black dark:text-white mr-3 text-2xl">•</span>
+                            <span>Science, Maths & Humanities</span>
+                        </li>
+                    </ul>
+                    <div class="text-center">
+                        <p class="text-5xl font-bold text-black dark:text-white mb-4 pulse-animate"></p>
+                    </div>
+                </div>
+                <div class="feature-card bg-gradient-to-br from-green-50 to-green-100 dark:from-gray-800 dark:to-gray-900 p-10 rounded-3xl shadow-2xl border-4 border-green-200 dark:border-green-900 scroll-animate delay-200">
+                    <div class="text-center mb-8">
+                        <div class="text-6xl mb-6 bounce-on-hover inline-block">🏆</div>
+                        <h3 class="text-3xl font-bold text-black dark:text-white mb-3">Excellence Batch</h3>
+                        <p class="text-gray-700 dark:text-gray-300 font-bold text-xl">Classes XI - XII</p>
+                    </div>
+                    <ul class="space-y-4 text-gray-700 dark:text-gray-300 mb-8">
+                        <li class="flex items-start text-lg">
+                            <span class="text-black dark:text-white mr-3 text-2xl">•</span>
+                            <span>Board exam strategy</span>
+                        </li>
+                        <li class="flex items-start text-lg">
+                            <span class="text-black dark:text-white mr-3 text-2xl">•</span>
+                            <span>Advanced concepts & tests</span>
+                        </li>
+                        <li class="flex items-start text-lg">
+                            <span class="text-black dark:text-white mr-3 text-2xl">•</span>
+                            <span>Science & Humanities streams</span>
+                        </li>
+                    </ul>
+                    <div class="text-center">
+                        <p class="text-5xl font-bold text-black dark:text-white mb-4 pulse-animate"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-16 bg-gradient-to-r from-gray-900 to-black dark:from-gray-100 dark:to-white p-12 rounded-3xl shadow-2xl border-4 border-gray-800 dark:border-gray-200 scroll-animate glow-effect">
+                <h3 class="text-4xl font-bold mb-10 text-white dark:text-black text-center">📝 How to Apply</h3>
+                <div class="grid md:grid-cols-5 gap-6">
+                    <div class="text-center transform hover:scale-110 transition">
+                        <div class="w-16 h-16 bg-white dark:bg-black text-black dark:text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4 shadow-xl">1</div>
+                        <p class="text-white dark:text-black font-semibold">Visit our YouTube or Facebook</p>
+                    </div>
+                    <div class="text-center transform hover:scale-110 transition">
+                        <div class="w-16 h-16 bg-white dark:bg-black text-black dark:text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4 shadow-xl">2</div>
+                        <p class="text-white dark:text-black font-semibold">Fill online registration form</p>
+                    </div>
+                    <div class="text-center transform hover:scale-110 transition">
+                        <div class="w-16 h-16 bg-white dark:bg-black text-black dark:text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4 shadow-xl">3</div>
+                        <p class="text-white dark:text-black font-semibold">Select class & stream</p>
+                    </div>
+                    <div class="text-center transform hover:scale-110 transition">
+                        <div class="w-16 h-16 bg-white dark:bg-black text-black dark:text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4 shadow-xl">4</div>
+                        <p class="text-white dark:text-black font-semibold">Attend orientation test</p>
+                    </div>
+                    <div class="text-center transform hover:scale-110 transition">
+                        <div class="w-16 h-16 bg-white dark:bg-black text-black dark:text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4 shadow-xl">5</div>
+                        <p class="text-white dark:text-black font-semibold">Get confirmation</p>
+                    </div>
+                </div>
+                <p class="text-center text-white dark:text-black mt-10 text-xl">📅 <strong>New Admissions:</strong> March - April (Once a year)</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-50 dark:bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-5xl font-bold text-center mb-4 text-black dark:text-white scroll-animate">📞 Get In Touch</h2>
+            <p class="text-center text-gray-600 dark:text-gray-400 mb-12 text-xl scroll-animate">We'd love to hear from you!</p>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="scroll-animate fade-in-left">
+                    <h3 class="text-3xl font-bold mb-8 text-black dark:text-white">Contact Information</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-start p-6 bg-white dark:bg-gray-900 rounded-2xl border-2 border-gray-200 dark:border-gray-700 hover:shadow-2xl transition transform hover:scale-105">
+                            <span class="text-4xl mr-4">📧</span>
+                            <div>
+                                <p class="font-bold text-black dark:text-white text-xl mb-2">Email</p>
+                                <p class="text-gray-600 dark:text-gray-400 text-lg">sikshaadhyayanonline@gmail.com</p>
+                                <p class="text-gray-600 dark:text-gray-400 text-lg">sikshaadhyayan@gmail.com</p>
+                            </div>
+                        </div>
+                        <a href="tel:+03822359765"><div class="flex items-start p-6 bg-white dark:bg-gray-900 rounded-2xl border-2 border-gray-200 dark:border-gray-700 hover:shadow-2xl transition transform hover:scale-105">
+                            <span class="text-4xl mr-4">📱</span>
+                            <div>
+                                <p class="font-bold text-black dark:text-white text-xl mb-2">Phone</p>
+                                <p class="text-gray-600 dark:text-gray-400 text-lg">03822359765</p>
+                            </div>
+                        </div></a>
+                        <a href="https://wa.me/+91 6033376335?text=Hello! welcome to Siksha Adhyayan. Feel free to ask your queries" class="/* Tailwind classes go here */"target="_blank"rel="noopener noreferrer">
+                        <div class="flex items-start p-6 bg-white dark:bg-gray-900 rounded-2xl border-2 border-gray-200 dark:border-gray-700 hover:shadow-2xl transition transform hover:scale-105">
+                            <span class="text-4xl mr-4">💬</span>
+                            <div>
+                                <p class="font-bold text-black dark:text-white text-xl mb-2">WhatsApp</p>
+                                <p class="text-gray-600 dark:text-gray-400 text-lg">6033376335</p>
+                            </div>
+                        </div></a>
+                        <a href="https://www.google.com/maps/place/Siksha+Adhyayan+Institute,+College+Rd,+Power+House+Quater+Complex,+Nayapara,+Dharmanagar,+Tripura+799250/@24.3813223,92.1685679,20.5z/data=!4m15!1m8!3m7!1s0x3751ece926bf0df7:0x4cc1dc27bf15a263!2sSiksha+Adhyayan+Institute,+College+Rd,+Power+House+Quater+Complex,+Nayapara,+Dharmanagar,+Tripura+799250!3b1!8m2!3d24.3813866!4d92.1687314!16s%2Fg%2F11vwh38vgf!3m5!1s0x3751ece926bf0df7:0x4cc1dc27bf15a263!8m2!3d24.3813866!4d92.1687314!16s%2Fg%2F11vwh38vgf?authuser=0&entry=ttu&g_ep=EgoyMDI2MDEwNi4wIKXMDSoASAFQAw%3D%3D"><div class="flex items-start p-6 bg-white dark:bg-gray-900 rounded-2xl border-2 border-gray-200 dark:border-gray-700 hover:shadow-2xl transition transform hover:scale-105">
+                            <span class="text-4xl mr-4">📍</span>
+                            <div>
+                                <p class="font-bold text-black dark:text-white text-xl mb-2">Location</p>
+                                <p class="text-gray-600 dark:text-gray-400 text-lg">Nayapara, PO: Dharmanagar | Tripura</p>
+                            </div>
+                        </div></a>
+                    </div>
+                </div>
+                <div class="scroll-animate fade-in-right">
+                    <h3 class="text-3xl font-bold mb-8 text-black dark:text-white">Connect on Social Media</h3>
+                    <div class="space-y-6">
+                        <a href="https://www.facebook.com/share/1SZV8vVF8h/" target="_blank" class="social-link flex items-center p-6 bg-white dark:bg-gray-900 rounded-2xl border-2 border-gray-200 dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-400 hover:shadow-2xl">
+                            <span class="text-5xl mr-6">📘</span>
+                            <div>
+                                <p class="font-bold text-black dark:text-white text-xl">Facebook</p>
+                                <p class="text-gray-600 dark:text-gray-400">Follow us for updates</p>
+                            </div>
+                        </a>
+                        <a href="https://www.instagram.com/sikshaadhyayaninstitute/" target="_blank" class="social-link flex items-center p-6 bg-white dark:bg-gray-900 rounded-2xl border-2 border-gray-200 dark:border-gray-700 hover:border-pink-500 dark:hover:border-pink-400 hover:shadow-2xl">
+                            <span class="text-5xl mr-6">📸</span>
+                            <div>
+                                <p class="font-bold text-black dark:text-white text-xl">Instagram</p>
+                                <p class="text-gray-600 dark:text-gray-400">Connect with us</p>
+                            </div>
+                        </a>
+                        <a href="https://www.youtube.com/@Siksha_adhyayan_institute" target="_blank" class="social-link flex items-center p-6 bg-white dark:bg-gray-900 rounded-2xl border-2 border-gray-200 dark:border-gray-700 hover:border-red-500 dark:hover:border-red-400 hover:shadow-2xl">
+                            <span class="text-5xl mr-6">🎥</span>
+                            <div>
+                                <p class="font-bold text-black dark:text-white text-xl">YouTube - Institute</p>
+                                <p class="text-gray-600 dark:text-gray-400">Watch our video lessons</p>
+                            </div>
+                        </a>
+                        <a href="https://www.youtube.com/@SikshaAdhyayanOnline" target="_blank" class="social-link flex items-center p-6 bg-white dark:bg-gray-900 rounded-2xl border-2 border-gray-200 dark:border-gray-700 hover:border-red-500 dark:hover:border-red-400 hover:shadow-2xl">
+                            <span class="text-5xl mr-6">🎥</span>
+                            <div>
+                                <p class="font-bold text-black dark:text-white text-xl">YouTube - Online</p>
+                                <p class="text-gray-600 dark:text-gray-400">Subscribe for more content</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-r from-gray-900 via-black to-gray-900 dark:from-gray-100 dark:via-white dark:to-gray-100 text-white dark:text-black py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <div class="text-6xl mb-6 bounce-on-hover inline-block">🌟</div>
+                <h3 class="text-4xl font-bold mb-4">Siksha Adhyayan Institute</h3>
+                <p class="text-2xl mb-6 font-semibold">Inspiring Minds, Empowering Futures</p>
+                <p class="text-lg mb-2">Established: 2nd April 2023</p>
+                <p class="text-lg mt-6">© 2025 Siksha Adhyayan Institute. All rights reserved.</p>
+                <p class="text-lg mt-2 font-bold">Education is a right, not a privilege. ✨</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+          const slider = document.getElementById('imageSlider');
+        const images = slider.querySelectorAll('.slider-image');
+        const buttons = document.querySelectorAll('.slider-button');
+        let currentIndex = 0;
+        let autoSlideInterval;
+
+        function showSlide(index) {
+            images.forEach((img, i) => {
+                img.classList.remove('active');
+                if (i === index) {
+                    img.classList.add('active');
+                }
+            });
+            
+            buttons.forEach((btn, i) => {
+                btn.classList.remove('active');
+                if (i === index) {
+                    btn.classList.add('active');
+                }
+            });
+            
+            currentIndex = index;
+        }
+
+        function nextSlide() {
+            const next = (currentIndex + 1) % images.length;
+            showSlide(next);
+        }
+
+        function startAutoSlide() {
+            autoSlideInterval = setInterval(nextSlide, 3000);
+        }
+
+        function stopAutoSlide() {
+            clearInterval(autoSlideInterval);
+        }
+
+        // Manual button controls
+        buttons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const slideIndex = parseInt(btn.dataset.slide);
+                showSlide(slideIndex);
+                stopAutoSlide();
+                startAutoSlide(); // Restart auto-slide after manual selection
+            });
+        });
+
+        // Hover to pause
+        slider.addEventListener('mouseenter', stopAutoSlide);
+        slider.addEventListener('mouseleave', startAutoSlide);
+
+        // Start auto-sliding
+        startAutoSlide();
+        // Dark mode toggle with localStorage
+        const themeToggle = document.getElementById('themeToggle');
+        const themeToggleMobile = document.getElementById('themeToggleMobile');
+        const html = document.documentElement;
+        
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        html.classList.toggle('dark', savedTheme === 'dark');
+        
+        function toggleTheme() {
+            html.classList.toggle('dark');
+            const newTheme = html.classList.contains('dark') ? 'dark' : 'light';
+            localStorage.setItem('theme', newTheme);
+        }
+        
+        themeToggle.addEventListener('click', toggleTheme);
+        themeToggleMobile.addEventListener('click', toggleTheme);
+
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+
+        // Advanced scroll animation observer
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    if (entry.target.classList.contains('fade-in-up')) {
+                        entry.target.style.animation = 'fadeInUp 0.8s ease-out forwards';
+                    } else if (entry.target.classList.contains('fade-in-left')) {
+                        entry.target.style.animation = 'fadeInLeft 0.8s ease-out forwards';
+                    } else if (entry.target.classList.contains('fade-in-right')) {
+                        entry.target.style.animation = 'fadeInRight 0.8s ease-out forwards';
+                    }
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Observe all scroll-animate elements
+        document.querySelectorAll('.scroll-animate').forEach(el => {
+            el.style.opacity = '0';
+            observer.observe(el);
+        });
+        
+        // Immediate animation for hero section
+        document.querySelectorAll('.fade-in-up').forEach(el => {
+            if (el.getBoundingClientRect().top < window.innerHeight) {
+                el.style.opacity = '1';
+            }
+        });
+
+        // Parallax effect for hero section
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const parallaxElements = document.querySelectorAll('.parallax');
+            
+            parallaxElements.forEach(el => {
+                const speed = 0.5;
+                el.style.transform = `translateY(${scrolled * speed}px)`;
+            });
+            
+            lastScroll = scrolled;
+        });
+
+        // Add click effect to stat numbers
+        document.querySelectorAll('.stat-number').forEach(stat => {
+            stat.addEventListener('click', () => {
+                stat.style.transform = 'scale(1.3) rotate(10deg)';
+                setTimeout(() => {
+                    stat.style.transform = 'scale(1) rotate(0deg)';
+                }, 300);
+            });
+        });
+    </script>
+</body>
+</html>
