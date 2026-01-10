@@ -347,26 +347,35 @@
             }
         }
         
-        /* Teachers Section */
-        @media (max-width: 640px) {
-            #teachers .grid {
-                grid-template-columns: 1fr !important;
-                gap: 2rem !important;
-            }
-            #teachers img{
-                align-items: center;
-                align-self:center;
-            }
-            
-            .teacher-card {
-                padding: 1.5rem !important;
-            }
-            
-            .teacher-card h3 {
-                font-size: 1.5rem !important;
-            }
-        }
-        
+      /* Teachers Section */
+@media (max-width: 640px) {
+    #teachers .grid {
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+    }
+    
+    /* Center the image container */
+    #teachers .teacher-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 1.5rem !important;
+    }
+    
+    /* Center the image itself */
+    #teachers img {
+        display: block;
+        margin: 0 auto;
+        height: 140px;
+        width: 140px;
+        min-height: 180px;
+        min-width: 180px;
+    }
+    
+    .teacher-card h3 {
+        font-size: 1.5rem !important;
+    }
+}
         @media (min-width: 641px) and (max-width: 1024px) {
             #teachers .grid {
                 grid-template-columns: repeat(2, 1fr) !important;
@@ -615,8 +624,8 @@
                 </div>
                 <div class="feature-card text-center p-8 rounded-2xl border-2 border-gray-200 dark:border-gray-700 glow-effect scroll-animate delay-100">
                     <div class="text-7xl mb-6 bounce-on-hover inline-block">🌐</div>
-                    <h3 class="text-2xl font-bold mb-4 text-black dark:text-white">Bilingual Learning</h3>
-                    <p class="text-gray-600 dark:text-gray-400 text-lg">Dual-language support in English and Banglish for better understanding</p>
+                    <h3 class="text-2xl font-bold mb-4 text-black dark:text-white">Polylingual Learning</h3>
+                    <p class="text-gray-600 dark:text-gray-400 text-lg">multi language support for better understanding (English, Bengali, Hinglish, Benglish)</p>
                 </div>
                 <div class="feature-card text-center p-8 rounded-2xl border-2 border-gray-200 dark:border-gray-700 glow-effect scroll-animate delay-200">
                     <div class="text-7xl mb-6 bounce-on-hover inline-block">💯</div>
@@ -815,15 +824,15 @@
                         <h3 class="text-3xl font-bold text-black dark:text-white teacher-name">Deep Acharjee</h3>
                         <p class="text-gray-600 dark:text-gray-400 font-semibold text-lg mt-2 qualification-badge">
                             <span class="inline-block bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-4 py-1 rounded-full">
-                                BSc Physics, CU
+                                BSc Physics | Chandigarh University
                             </span>
                         </p>
                     </div>
                     <div class="text-gray-600 dark:text-gray-400">
                         <p class="mb-3 font-bold text-black dark:text-white text-lg">📚 Subjects:</p>
                         <ul class="space-y-2 text-lg">
-                            <li class="subject-item">• Physics (Class 10, 11, 12)</li>
-                            <li class="subject-item">• Chemistry (Class 10)</li>
+                            <li class="subject-item">• Physics (Class 9, 10, 11, 12)</li>
+                            <li class="subject-item">• Chemistry (Class 9 & 10)</li>
                         </ul>
                     </div>
                 </div>
@@ -840,7 +849,7 @@
                         <h3 class="text-3xl font-bold text-black dark:text-white teacher-name">Shantanu Roy</h3>
                         <p class="text-gray-600 dark:text-gray-400 font-semibold text-lg mt-2 qualification-badge">
                             <span class="inline-block bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-4 py-1 rounded-full">
-                                BSc BEd Zoology, AU
+                                BSc BEd Zoology | Assam University
                             </span>
                         </p>
                     </div>
@@ -864,7 +873,7 @@
                         <h3 class="text-3xl font-bold text-black dark:text-white teacher-name">Joydip Malakar</h3>
                         <p class="text-gray-600 dark:text-gray-400 font-semibold text-lg mt-2 qualification-badge">
                             <span class="inline-block bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-200 px-4 py-1 rounded-full">
-                                MSc Mathematics, SLET
+                                MSc Mathematics | Tripura University | SLET Qualified
                             </span>
                         </p>
                     </div>
@@ -884,81 +893,92 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-5xl font-bold text-center mb-4 text-black dark:text-white scroll-animate">🎓 Available Batches</h2>
             <p class="text-center text-gray-600 dark:text-gray-400 mb-12 text-xl scroll-animate">All courses are completely free of charge!</p>
-            <div class="grid md:grid-cols-3 gap-10">
-                <div class="feature-card bg-gradient-to-br from-blue-50 to-blue-100 dark:from-gray-800 dark:to-gray-900 p-10 rounded-3xl shadow-2xl border-4 border-blue-200 dark:border-blue-900 scroll-animate">
-                    <div class="text-center mb-8">
-                        <div class="text-6xl mb-6 bounce-on-hover inline-block">🌱</div>
-                        <h3 class="text-3xl font-bold text-black dark:text-white mb-3">Foundation Batch</h3>
-                        <p class="text-gray-700 dark:text-gray-300 font-bold text-xl">Classes VI - VIII</p>
-                    </div>
-                    <ul class="space-y-4 text-gray-700 dark:text-gray-300 mb-8">
-                        <li class="flex items-start text-lg">
-                            <span class="text-black dark:text-white mr-3 text-2xl">•</span>
-                            <span>Concept building & NCERT learning</span>
-                        </li>
-                        <li class="flex items-start text-lg">
-                            <span class="text-black dark:text-white mr-3 text-2xl">•</span>
-                            <span>Online + Offline mode</span>
-                        </li>
-                        <li class="flex items-start text-lg">
-                            <span class="text-black dark:text-white mr-3 text-2xl">•</span>
-                            <span>English & Banglish</span>
-                        </li>
-                    </ul>
-                    <div class="text-center">
-                        <p class="text-5xl font-bold text-black dark:text-white mb-4 pulse-animate"></p>
-                    </div>
-                </div>
-                <div class="feature-card bg-gradient-to-br from-purple-50 to-purple-100 dark:from-gray-800 dark:to-gray-900 p-10 rounded-3xl shadow-2xl border-4 border-purple-500 dark:border-purple-700 scroll-animate delay-100 transform scale-105">
-                    <div class="text-center mb-8">
-                        <div class="text-6xl mb-6 bounce-on-hover inline-block">🎯</div>
-                        <h3 class="text-3xl font-bold text-black dark:text-white mb-3">Board Preparatory</h3>
-                        <p class="text-gray-700 dark:text-gray-300 font-bold text-xl">Classes IX - X</p>
-                        <span class="inline-block bg-purple-600 text-white px-4 py-2 rounded-full text-sm font-bold mt-3">POPULAR</span>
-                    </div>
-                    <ul class="space-y-4 text-gray-700 dark:text-gray-300 mb-8">
-                        <li class="flex items-start text-lg">
-                            <span class="text-black dark:text-white mr-3 text-2xl">•</span>
-                            <span>Complete syllabus coverage</span>
-                        </li>
-                        <li class="flex items-start text-lg">
-                            <span class="text-black dark:text-white mr-3 text-2xl">•</span>
-                            <span>Test series & doubt clearing</span>
-                        </li>
-                        <li class="flex items-start text-lg">
-                            <span class="text-black dark:text-white mr-3 text-2xl">•</span>
-                            <span>Science, Maths & Humanities</span>
-                        </li>
-                    </ul>
-                    <div class="text-center">
-                        <p class="text-5xl font-bold text-black dark:text-white mb-4 pulse-animate"></p>
-                    </div>
-                </div>
-                <div class="feature-card bg-gradient-to-br from-green-50 to-green-100 dark:from-gray-800 dark:to-gray-900 p-10 rounded-3xl shadow-2xl border-4 border-green-200 dark:border-green-900 scroll-animate delay-200">
-                    <div class="text-center mb-8">
-                        <div class="text-6xl mb-6 bounce-on-hover inline-block">🏆</div>
-                        <h3 class="text-3xl font-bold text-black dark:text-white mb-3">Excellence Batch</h3>
-                        <p class="text-gray-700 dark:text-gray-300 font-bold text-xl">Classes XI - XII</p>
-                    </div>
-                    <ul class="space-y-4 text-gray-700 dark:text-gray-300 mb-8">
-                        <li class="flex items-start text-lg">
-                            <span class="text-black dark:text-white mr-3 text-2xl">•</span>
-                            <span>Board exam strategy</span>
-                        </li>
-                        <li class="flex items-start text-lg">
-                            <span class="text-black dark:text-white mr-3 text-2xl">•</span>
-                            <span>Advanced concepts & tests</span>
-                        </li>
-                        <li class="flex items-start text-lg">
-                            <span class="text-black dark:text-white mr-3 text-2xl">•</span>
-                            <span>Science & Humanities streams</span>
-                        </li>
-                    </ul>
-                    <div class="text-center">
-                        <p class="text-5xl font-bold text-black dark:text-white mb-4 pulse-animate"></p>
-                    </div>
-                </div>
-            </div>
+           <div class="grid md:grid-cols-3 gap-10">
+    <div class="feature-card bg-gradient-to-br from-blue-50 to-blue-100 dark:from-gray-800 dark:to-gray-900 p-10 rounded-3xl shadow-2xl border-4 border-blue-200 dark:border-blue-900 scroll-animate">
+        <div class="text-center mb-8">
+            <div class="text-6xl mb-6 bounce-on-hover inline-block">🌱</div>
+            <h3 class="text-3xl font-bold text-black dark:text-white mb-3">Foundation Batch</h3>
+            <p class="text-gray-700 dark:text-gray-300 font-bold text-xl">Classes VI - VIII</p>
+        </div>
+        <ul class="space-y-4 text-gray-700 dark:text-gray-300 mb-8">
+            <li class="flex items-start text-lg">
+                <span class="text-black dark:text-white mr-3 text-2xl">•</span>
+                <span>Concept building & NCERT learning</span>
+            </li>
+            <li class="flex items-start text-lg">
+                <span class="text-black dark:text-white mr-3 text-2xl">•</span>
+                <span>Online + Offline mode</span>
+            </li>
+            <li class="flex items-start text-lg">
+                <span class="text-black dark:text-white mr-3 text-2xl">•</span>
+                <span>English & Banglish</span>
+            </li>
+        </ul>
+        <div class="text-center">
+            <p class="text-5xl font-bold text-black dark:text-white mb-4 pulse-animate"></p>
+            <a href="YOUR_GOOGLE_FORM_LINK_HERE" target="_blank" rel="noopener noreferrer" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg cursor-pointer select-none">
+                Enroll Now
+            </a>
+        </div>
+    </div>
+    
+    <div class="feature-card bg-gradient-to-br from-purple-50 to-purple-100 dark:from-gray-800 dark:to-gray-900 p-10 rounded-3xl shadow-2xl border-4 border-purple-500 dark:border-purple-700 scroll-animate delay-100 transform scale-105">
+        <div class="text-center mb-8">
+            <div class="text-6xl mb-6 bounce-on-hover inline-block">🎯</div>
+            <h3 class="text-3xl font-bold text-black dark:text-white mb-3">Board Preparatory</h3>
+            <p class="text-gray-700 dark:text-gray-300 font-bold text-xl">Classes IX - X</p>
+            <span class="inline-block bg-purple-600 text-white px-4 py-2 rounded-full text-sm font-bold mt-3">POPULAR</span>
+        </div>
+        <ul class="space-y-4 text-gray-700 dark:text-gray-300 mb-8">
+            <li class="flex items-start text-lg">
+                <span class="text-black dark:text-white mr-3 text-2xl">•</span>
+                <span>Complete syllabus coverage</span>
+            </li>
+            <li class="flex items-start text-lg">
+                <span class="text-black dark:text-white mr-3 text-2xl">•</span>
+                <span>Test series & doubt clearing</span>
+            </li>
+            <li class="flex items-start text-lg">
+                <span class="text-black dark:text-white mr-3 text-2xl">•</span>
+                <span>Science, Maths & Humanities</span>
+            </li>
+        </ul>
+        <div class="text-center">
+            <p class="text-5xl font-bold text-black dark:text-white mb-4 pulse-animate"></p>
+            <a href="YOUR_GOOGLE_FORM_LINK_HERE" target="_blank" rel="noopener noreferrer" class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg cursor-pointer select-none">
+                Enroll Now
+            </a>
+        </div>
+    </div>
+    
+    <div class="feature-card bg-gradient-to-br from-green-50 to-green-100 dark:from-gray-800 dark:to-gray-900 p-10 rounded-3xl shadow-2xl border-4 border-green-200 dark:border-green-900 scroll-animate delay-200">
+        <div class="text-center mb-8">
+            <div class="text-6xl mb-6 bounce-on-hover inline-block">🏆</div>
+            <h3 class="text-3xl font-bold text-black dark:text-white mb-3">Excellence Batch</h3>
+            <p class="text-gray-700 dark:text-gray-300 font-bold text-xl">Classes XI - XII</p>
+        </div>
+        <ul class="space-y-4 text-gray-700 dark:text-gray-300 mb-8">
+            <li class="flex items-start text-lg">
+                <span class="text-black dark:text-white mr-3 text-2xl">•</span>
+                <span>Board exam strategy</span>
+            </li>
+            <li class="flex items-start text-lg">
+                <span class="text-black dark:text-white mr-3 text-2xl">•</span>
+                <span>Advanced concepts & tests</span>
+            </li>
+            <li class="flex items-start text-lg">
+                <span class="text-black dark:text-white mr-3 text-2xl">•</span>
+                <span>Science & Humanities streams</span>
+            </li>
+        </ul>
+        <div class="text-center">
+            <p class="text-5xl font-bold text-black dark:text-white mb-4 pulse-animate"></p>
+            <a href="YOUR_GOOGLE_FORM_LINK_HERE" target="_blank" rel="noopener noreferrer" class="inline-block bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg cursor-pointer select-none">
+                Enroll Now
+            </a>
+        </div>
+    </div>
+</div>
             <div class="mt-16 bg-gradient-to-r from-gray-900 to-black dark:from-gray-100 dark:to-white p-12 rounded-3xl shadow-2xl border-4 border-gray-800 dark:border-gray-200 scroll-animate glow-effect">
                 <h3 class="text-4xl font-bold mb-10 text-white dark:text-black text-center">📝 How to Apply</h3>
                 <div class="grid md:grid-cols-5 gap-6">
