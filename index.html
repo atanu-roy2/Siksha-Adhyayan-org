@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Siksha Adhyayan Institute - Inspiring Minds, Empowering Futures</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @keyframes fadeInUp {
@@ -347,6 +348,7 @@
             }
         }
         
+        
       /* Teachers Section */
 @media (max-width: 640px) {
     #teachers .grid {
@@ -533,6 +535,246 @@
                 font-size: 1.25rem !important;
             }
         }
+        .footer {
+            background: linear-gradient(135deg, #1a1a2e 0%, #0f0f1e 50%, #1a1a2e 100%);
+            color: white;
+            padding: 4rem 1rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #ffd700, #ffed4e, #ffd700);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+
+        .footer-container {
+            max-width:7xl;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        /* Brand Section */
+        .footer-brand {
+            text-align: center;
+        }
+
+        .icon-wrapper {
+            font-size: 4rem;
+            display: inline-block;
+            animation: float 3s ease-in-out infinite;
+            margin-bottom: 1rem;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .institute-name {
+            font-size: 2rem;
+            font-weight: 800;
+            background: linear-gradient(135deg,  #fffffe, #272724);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.75rem;
+            line-height: 1.2;
+        }
+
+        .tagline {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #e0e0e0;
+            margin-bottom: 1rem;
+        }
+
+        .established {
+            font-size: 1rem;
+            color: #b0b0b0;
+        }
+
+        /* Quick Links Section */
+        .footer-section {
+            text-align: center;
+        }
+
+        .footer-section h4 {
+            color: #ffd700;
+            font-size: 1.25rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .footer-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .footer-links a {
+            color: #e0e0e0;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+            font-size: 1rem;
+        }
+
+        .footer-links a:hover {
+            color: #ffd700;
+            transform: translateX(5px);
+        }
+
+        /* Social Links */
+        .socials-links {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .social-links {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 215, 0, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-links:hover {
+            background: rgba(255, 215, 0, 0.2);
+            border-color: #ffd700;
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 10px 20px rgba(255, 215, 0, 0.3);
+        }
+
+        /* Footer Bottom */
+        .footer-bottom {
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 215, 0, 0.2);
+            text-align: center;
+        }
+
+        .copyright {
+            font-size: 1rem;
+            color: #b0b0b0;
+            margin-bottom: 1rem;
+        }
+
+        .motto {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #ffd700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .sparkle {
+            display: inline-block;
+            animation: sparkle 2s infinite;
+        }
+
+        @keyframes sparkle {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.2); }
+        }
+
+        /* Tablet */
+        @media (min-width: 640px) {
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-brand {
+                grid-column: 1 / -1;
+            }
+
+            .institute-name {
+                font-size: 2.5rem;
+            }
+
+            .tagline {
+                font-size: 1.5rem;
+            }
+        }
+
+        /* Desktop */
+        @media (min-width: 1024px) {
+            .footer {
+                padding: 5rem 2rem 2.5rem;
+            }
+
+            .footer-grid {
+                grid-template-columns: 2fr 1fr 1fr;
+                gap: 4rem;
+                text-align: left;
+            }
+
+            .footer-brand {
+                grid-column: auto;
+                text-align: left;
+            }
+
+            .footer-section {
+                text-align: left;
+            }
+
+            .footer-links {
+                align-items: flex-start;
+            }
+
+            .footer-links a:hover {
+                transform: translateX(10px);
+            }
+
+            .socials-links {
+                justify-content: flex-start;
+            }
+
+            .institute-name {
+                font-size: 3rem;
+            }
+
+            .tagline {
+                font-size: 1.75rem;
+            }
+
+            .footer-bottom {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .copyright {
+                margin-bottom: 0;
+            }}
 
     </style>
 </head>
@@ -667,7 +909,7 @@
             <p class="text-center text-gray-600 dark:text-gray-400 mb-12 text-xl scroll-animate">Moments that inspire excellence</p>
             
             <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-                <div class="gallery-item scroll-animate">
+                <div class="gallery-item scroll-animate"style="border-radius: 12%;">
                     <div class="bg-gradient-to-br from-blue-400 to-blue-600 dark:from-blue-300 dark:to-blue-500 rounded-2xl overflow-hidden shadow-2xl float-img h-72 flex items-center justify-center border-4 border-white dark:border-gray-700">
                         <div class="text-center p-6">
                             <div class="text-8xl mb-3"><video autoplay muted loop><source src="WhatsApp Video 2026-01-01 at 10.31.55.mp4"></video></div>
@@ -676,7 +918,7 @@
                     </div>
                 </div>
                 
-                <div class="gallery-item scroll-animate delay-100">
+                <div class="gallery-item scroll-animate delay-100"style="border-radius: 12%;">
                     <div class="bg-gradient-to-br from-purple-400 to-purple-600 dark:from-purple-300 dark:to-purple-500 rounded-2xl overflow-hidden shadow-2xl float-img-reverse h-72 flex items-center justify-center border-4 border-white dark:border-gray-700">
                         <div class="text-center p-6">
                             <div class="text-8xl mb-3"><video autoplay muted loop><source src="WhatsApp Video 2026-01-01 at 10.32.02 (1).mp4"></video></div>
@@ -685,7 +927,7 @@
                     </div>
                 </div>
                 
-                <div class="gallery-item scroll-animate delay-200">
+                <div class="gallery-item scroll-animate delay-200"style="border-radius: 12%;">
                     <div class="bg-gradient-to-br from-green-400 to-green-600 dark:from-green-300 dark:to-green-500 rounded-2xl overflow-hidden shadow-2xl float-img h-72 flex items-center justify-center border-4 border-white dark:border-gray-700">
                         <div class="text-center p-6">
                             <div class="text-8xl mb-3"><video autoplay muted loop><source src="WhatsApp Video 2026-01-01 at 10.33.44.mp4"></video></div>
@@ -694,7 +936,7 @@
                     </div>
                 </div>
                 
-                <div class="gallery-item scroll-animate delay-300">
+                <div class="gallery-item scroll-animate delay-300"style="border-radius: 12%;">
                     <div class="bg-gradient-to-br from-red-400 to-red-600 dark:from-red-300 dark:to-red-500 rounded-2xl overflow-hidden shadow-2xl float-img-reverse h-72 flex items-center justify-center border-4 border-white dark:border-gray-700">
                         <div class="text-center p-6">
                             <div class="text-8xl mb-3"><img src="test.jpg"></div>
@@ -703,7 +945,7 @@
                     </div>
                 </div>
                 
-                <div class="gallery-item scroll-animate">
+                <div class="gallery-item scroll-animate"style="border-radius: 12%;">
                     <div class="bg-gradient-to-br from-yellow-400 to-yellow-600 dark:from-yellow-300 dark:to-yellow-500 rounded-2xl overflow-hidden shadow-2xl float-img-reverse h-72 flex items-center justify-center border-4 border-white dark:border-gray-700">
                         <div class="text-center p-6">
                             <div class="text-8xl mb-3"><img src="success.jpg"></div>
@@ -712,7 +954,7 @@
                     </div>
                 </div>
                 
-                <div class="gallery-item scroll-animate delay-100">
+                <div class="gallery-item scroll-animate delay-100"style="border-radius: 12%;">
                     <div class="bg-gradient-to-br from-pink-400 to-pink-600 dark:from-pink-300 dark:to-pink-500 rounded-2xl overflow-hidden shadow-2xl float-img h-72 flex items-center justify-center border-4 border-white dark:border-gray-700">
                         <div class="text-center p-6">
                             <div class="text-8xl mb-3"><img src="practice.webp"></div>
@@ -721,7 +963,7 @@
                     </div>
                 </div>
                 
-                <div class="gallery-item scroll-animate delay-200">
+                <div class="gallery-item scroll-animate delay-200"style="border-radius: 12%;">
                     <div class="bg-gradient-to-br from-indigo-400 to-indigo-600 dark:from-indigo-300 dark:to-indigo-500 rounded-2xl overflow-hidden shadow-2xl float-img-reverse h-72 flex items-center justify-center border-4 border-white dark:border-gray-700">
                         <div class="text-center p-6">
                             <div class="text-8xl mb-3">⏩</div>
@@ -730,7 +972,7 @@
                     </div>
                 </div>
                 
-                <div class="gallery-item scroll-animate delay-300">
+                <div class="gallery-item scroll-animate delay-300"style="border-radius: 12%;">
                     <div class="bg-gradient-to-br from-teal-400 to-teal-600 dark:from-teal-300 dark:to-teal-500 rounded-2xl overflow-hidden shadow-2xl float-img h-72 flex items-center justify-center border-4 border-white dark:border-gray-700">
                         <div class="text-center p-6">
                             <div class="text-8xl mb-3"><img src="goal.webp"></div>
@@ -819,7 +1061,7 @@
                             <div class="avatar-ring"></div>
                             <img src="Deep.png" 
                                  alt="Deep Acharjee" 
-                                 class="teacher-avatar">
+                                 class="teacher-avatar" style="border-radius: 12%;">
                         </div>
                         <h3 class="text-3xl font-bold text-black dark:text-white teacher-name">Deep Acharjee</h3>
                         <p class="text-gray-600 dark:text-gray-400 font-semibold text-lg mt-2 qualification-badge">
@@ -844,7 +1086,7 @@
                             <div class="avatar-ring"></div>
                             <img src="shantanu.png" 
                                  alt="Shantanu Roy" 
-                                 class="teacher-avatar">
+                                 class="teacher-avatar"style="border-radius: 12%;">
                         </div>
                         <h3 class="text-3xl font-bold text-black dark:text-white teacher-name">Shantanu Roy</h3>
                         <p class="text-gray-600 dark:text-gray-400 font-semibold text-lg mt-2 qualification-badge">
@@ -868,7 +1110,7 @@
                             <div class="avatar-ring"></div>
                             <img src="joydip.png" 
                                  alt="Joydip Malakar" 
-                                 class="teacher-avatar">
+                                 class="teacher-avatar"style="border-radius: 12%;">
                         </div>
                         <h3 class="text-3xl font-bold text-black dark:text-white teacher-name">Joydip Malakar</h3>
                         <p class="text-gray-600 dark:text-gray-400 font-semibold text-lg mt-2 qualification-badge">
@@ -1017,16 +1259,16 @@
                 <div class="scroll-animate fade-in-left">
                     <h3 class="text-3xl font-bold mb-8 text-black dark:text-white">Contact Information</h3>
                     <div class="space-y-6">
-                        <div class="flex items-start p-6 bg-white dark:bg-gray-900 rounded-2xl border-2 border-gray-200 dark:border-gray-700 hover:shadow-2xl transition transform hover:scale-105">
-                            <span class="text-4xl mr-4">📧</span>
+                       <a href="mailto:sikshaadhyayan@gmail.com"><div class="flex items-start p-6 bg-white dark:bg-gray-900 rounded-2xl border-2 border-gray-200 dark:border-gray-700 hover:shadow-2xl transition transform hover:scale-105">
+                           <span class="text-4xl mr-4"><i class="fa-solid fa-envelope-circle-check" style="color: #f0e094;"></i></span>
                             <div>
                                 <p class="font-bold text-black dark:text-white text-xl mb-2">Email</p>
-                                <p class="text-gray-600 dark:text-gray-400 text-lg">sikshaadhyayanonline@gmail.com</p>
+                                <!-- <p class="text-gray-600 dark:text-gray-400 text-lg">sikshaadhyayanonline@gmail.com</p> -->
                                 <p class="text-gray-600 dark:text-gray-400 text-lg">sikshaadhyayan@gmail.com</p>
                             </div>
-                        </div>
+                        </div></a>
                         <a href="tel:+03822359765"><div class="flex items-start p-6 bg-white dark:bg-gray-900 rounded-2xl border-2 border-gray-200 dark:border-gray-700 hover:shadow-2xl transition transform hover:scale-105">
-                            <span class="text-4xl mr-4">📱</span>
+                            <span class="text-4xl mr-4"><i class="fa-solid fa-tty" style="color: #83aaec;"></i></span>
                             <div>
                                 <p class="font-bold text-black dark:text-white text-xl mb-2">Phone</p>
                                 <p class="text-gray-600 dark:text-gray-400 text-lg">03822359765</p>
@@ -1034,14 +1276,14 @@
                         </div></a>
                         <a href="https://wa.me/+91 6033376335?text=Hello! welcome to Siksha Adhyayan. Feel free to ask your queries" class="/* Tailwind classes go here */"target="_blank"rel="noopener noreferrer">
                         <div class="flex items-start p-6 bg-white dark:bg-gray-900 rounded-2xl border-2 border-gray-200 dark:border-gray-700 hover:shadow-2xl transition transform hover:scale-105">
-                            <span class="text-4xl mr-4">💬</span>
+                            <span class="text-4xl mr-4"><i class="fa-brands fa-whatsapp" style="color: #00bd03;"></i></span>
                             <div>
                                 <p class="font-bold text-black dark:text-white text-xl mb-2">WhatsApp</p>
                                 <p class="text-gray-600 dark:text-gray-400 text-lg">6033376335</p>
                             </div>
                         </div></a>
                         <a href="https://www.google.com/maps/place/Siksha+Adhyayan+Institute,+College+Rd,+Power+House+Quater+Complex,+Nayapara,+Dharmanagar,+Tripura+799250/@24.3813223,92.1685679,20.5z/data=!4m15!1m8!3m7!1s0x3751ece926bf0df7:0x4cc1dc27bf15a263!2sSiksha+Adhyayan+Institute,+College+Rd,+Power+House+Quater+Complex,+Nayapara,+Dharmanagar,+Tripura+799250!3b1!8m2!3d24.3813866!4d92.1687314!16s%2Fg%2F11vwh38vgf!3m5!1s0x3751ece926bf0df7:0x4cc1dc27bf15a263!8m2!3d24.3813866!4d92.1687314!16s%2Fg%2F11vwh38vgf?authuser=0&entry=ttu&g_ep=EgoyMDI2MDEwNi4wIKXMDSoASAFQAw%3D%3D"><div class="flex items-start p-6 bg-white dark:bg-gray-900 rounded-2xl border-2 border-gray-200 dark:border-gray-700 hover:shadow-2xl transition transform hover:scale-105">
-                            <span class="text-4xl mr-4">📍</span>
+                            <span class="text-4xl mr-4"><i class="fa-solid fa-location-dot" style="color: #edeff3;"></i></span>
                             <div>
                                 <p class="font-bold text-black dark:text-white text-xl mb-2">Location</p>
                                 <p class="text-gray-600 dark:text-gray-400 text-lg">Nayapara, PO: Dharmanagar | Tripura</p>
@@ -1053,28 +1295,28 @@
                     <h3 class="text-3xl font-bold mb-8 text-black dark:text-white">Connect on Social Media</h3>
                     <div class="space-y-6">
                         <a href="https://www.facebook.com/share/1SZV8vVF8h/" target="_blank" class="social-link flex items-center p-6 bg-white dark:bg-gray-900 rounded-2xl border-2 border-gray-200 dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-400 hover:shadow-2xl">
-                            <span class="text-5xl mr-6">📘</span>
+                            <span class="text-5xl mr-6"><i class="fa-brands fa-facebook" style="color: #74C0FC;"></i></span>
                             <div>
                                 <p class="font-bold text-black dark:text-white text-xl">Facebook</p>
                                 <p class="text-gray-600 dark:text-gray-400">Follow us for updates</p>
                             </div>
                         </a>
                         <a href="https://www.instagram.com/sikshaadhyayaninstitute/" target="_blank" class="social-link flex items-center p-6 bg-white dark:bg-gray-900 rounded-2xl border-2 border-gray-200 dark:border-gray-700 hover:border-pink-500 dark:hover:border-pink-400 hover:shadow-2xl">
-                            <span class="text-5xl mr-6">📸</span>
+                            <span class="text-5xl mr-6"><i class="fa-brands fa-square-instagram" style="color: #ff1486;"></i></span>
                             <div>
                                 <p class="font-bold text-black dark:text-white text-xl">Instagram</p>
                                 <p class="text-gray-600 dark:text-gray-400">Connect with us</p>
                             </div>
                         </a>
                         <a href="https://www.youtube.com/@Siksha_adhyayan_institute" target="_blank" class="social-link flex items-center p-6 bg-white dark:bg-gray-900 rounded-2xl border-2 border-gray-200 dark:border-gray-700 hover:border-red-500 dark:hover:border-red-400 hover:shadow-2xl">
-                            <span class="text-5xl mr-6">🎥</span>
+                            <span class="text-5xl mr-6"><i class="fa-brands fa-youtube" style="color: #e70404;"></i></span>
                             <div>
                                 <p class="font-bold text-black dark:text-white text-xl">YouTube - Institute</p>
                                 <p class="text-gray-600 dark:text-gray-400">Watch our video lessons</p>
                             </div>
                         </a>
                         <a href="https://www.youtube.com/@SikshaAdhyayanOnline" target="_blank" class="social-link flex items-center p-6 bg-white dark:bg-gray-900 rounded-2xl border-2 border-gray-200 dark:border-gray-700 hover:border-red-500 dark:hover:border-red-400 hover:shadow-2xl">
-                            <span class="text-5xl mr-6">🎥</span>
+                            <span class="text-5xl mr-6"><i class="fa-brands fa-youtube" style="color: #e70404;"></i></span>
                             <div>
                                 <p class="font-bold text-black dark:text-white text-xl">YouTube - Online</p>
                                 <p class="text-gray-600 dark:text-gray-400">Subscribe for more content</p>
@@ -1087,15 +1329,50 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gradient-to-r from-gray-900 via-black to-gray-900 dark:from-gray-100 dark:via-white dark:to-gray-100 text-white dark:text-black py-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center">
-                <div class="text-6xl mb-6 bounce-on-hover inline-block">🌟</div>
-                <h3 class="text-4xl font-bold mb-4">Siksha Adhyayan Institute</h3>
-                <p class="text-2xl mb-6 font-semibold">Inspiring Minds, Empowering Futures</p>
-                <p class="text-lg mb-2">Established: 2nd April 2023</p>
-                <p class="text-lg mt-6">© 2025 Siksha Adhyayan Institute. All rights reserved.</p>
-                <p class="text-lg mt-2 font-bold">Education is a right, not a privilege. ✨</p>
+ <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <!-- Brand Section -->
+                <div class="footer-brand">
+                    <div class="icon-wrapper"><img src="logo.png" width="80px" style="border-radius: 50%;"></div>
+                    <h3 class="institute-name">Siksha Adhyayan Institute</h3>
+                    <p class="tagline">Inspiring Minds, Empowering Futures</p>
+                    <p class="established">📅 Established: 2nd April 2023</p>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#batches">Courses</a></li>
+                        <!-- <li><a href="#admissions">Admissions</a></li> -->
+                        <li><a href="#teachers">Faculty</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <!-- <li><a href="#careers">Careers</a></li> -->
+                    </ul>
+                </div>
+
+                <!-- Social Links -->
+                <div class="footer-section">
+                    <h4>Connect With Us</h4>
+                    <div class="socials-links">
+                        <a href="https://www.facebook.com/share/1SZV8vVF8h/" class="social-links" aria-label="Facebook"><i class="fa-brands fa-facebook-f" style="color: #3e68e8;"></i></a>
+                        
+                        <a href="https://www.instagram.com/sikshaadhyayaninstitute/" class="social-links" aria-label="Instagram"><i class="fa-brands fa-instagram" style="color: #e60a57;"></i></a>
+                        
+                        <a href="https://www.youtube.com/@Siksha_adhyayan_institute" class="social-links" aria-label="YouTube"><i class="fa-brands fa-youtube" style="color: #e70404;"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <p class="copyright">© 2025 Siksha Adhyayan Institute. All rights reserved.</p>
+                <p class="motto">
+                    Education is a right, not a privilege
+                    <span class="sparkle">✨</span>
+                </p>
             </div>
         </div>
     </footer>
